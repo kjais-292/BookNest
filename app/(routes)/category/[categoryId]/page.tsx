@@ -8,8 +8,8 @@ import getProducts from "@/actions/get-products";
 import getCategory from '@/actions/get-category';
 import getCategories from '@/actions/get-categories';
 
-import Filter from './components/filter';
-import MobileFilters from './components/mobile-filters';
+// import Filter from './components/filter';
+// import MobileFilters from './components/mobile-filters';
 
 export const revalidate = 0;
 
@@ -31,9 +31,9 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     // colorId: searchParams.colorId,
     // sizeId: searchParams.sizeId,
   });
-  const categories = await getCategories();
+  
+  // const categories = await getCategories();
   const category = await getCategory(params.categoryId);
-
   return (
     <div className="bg-white">
       <Container>
@@ -41,18 +41,18 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
           data={category.billboard}
         />
         <div className="px-4 sm:px-6 lg:px-8 pb-24">
-          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
-            <MobileFilters categories={categories}/>
+          {/* <div className="lg:grid lg:grid-cols-5 lg:gap-x-8"> */}
+            {/* <MobileFilters categories={categories}/> */}
             <div className="hidden lg:block">
-              <Filter
+              {/* <Filter
                 valueKey="categoryId" 
                 name="Explore Our Collection" 
                 data={categories}
-              />
-            </div>
+              /> */}
+            {/* </div> */}
             <div className="mt-6 lg:col-span-4 lg:mt-0">
               {products.length === 0 && <NoResults />}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {products.map((item) => (
                   <ProductCard key={item.id} data={item} />
                 ))}
