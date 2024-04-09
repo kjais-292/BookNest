@@ -46,7 +46,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
             <div className="hidden lg:block">
               <Filter
                 valueKey="categoryId" 
-                name="Prices todo" 
+                name="Explore Our Collection" 
                 data={categories}
               />
             </div>
